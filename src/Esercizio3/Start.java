@@ -1,12 +1,21 @@
 package Esercizio3;
 
+import Esercizio3.vaccine.GreenPass;
+import Esercizio3.vaccine.Person;
+
 public class Start {
     public static void main(String[] args) {
         Person andrea = new Person("Andrea", "Bianchetti");
         Person francesca = new Person("Francesca", "Lella");
 
-        System.out.println(andrea.vaccinate().isValid());
-        System.out.println("-------------");
+        GreenPass primoVaccinoAndrea = andrea.vaccinate();
+        System.out.printf("------------%n" +
+                        "Il GreenPass con id: %s%n di %s è valido %s.%n" +
+                        "------------%n",
+                primoVaccinoAndrea.getId(),
+                andrea.getFullName(),
+                primoVaccinoAndrea.isValid()
+        );
 
         andrea.vaccinate();
         andrea.vaccinate();
@@ -14,16 +23,21 @@ public class Start {
         francesca.vaccinate();
         francesca.vaccinate();
 
-        GreenPass gpa = andrea.vaccinate();
-        GreenPass gpf = francesca.vaccinate();
+        GreenPass ultimoVaccinoAndrea = andrea.vaccinate();
 
-        System.out.println(gpa.belongsTo(andrea));
-        System.out.println(gpa.belongsTo(francesca));
 
-        System.out.println(gpf.belongsTo(andrea));
-        System.out.println(gpf.belongsTo(francesca));
+        System.out.println("Il vaccino di Andrea appartiene ad Andrea: " + ultimoVaccinoAndrea.belongsTo(andrea));
+        System.out.println("Il vaccino di Andrea appartiene a Francesca: " + ultimoVaccinoAndrea.belongsTo(francesca));
 
-        System.out.println(andrea.vaccinate().isValid());
+        System.out.printf("------------%n" +
+                        "Il GreenPass con id: %s%n di %s è valido %s.%n" +
+                        "------------%n",
+                ultimoVaccinoAndrea.getId(),
+                andrea.getFullName(),
+                ultimoVaccinoAndrea.isValid()
+        );
 
+        System.out.println("La prima dose scade 180 giorni prima di averla fatta.\n" +
+                "La seconda scade 270 giorni dopo averla fatta.");
     }
 }

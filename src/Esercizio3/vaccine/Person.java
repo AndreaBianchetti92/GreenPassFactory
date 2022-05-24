@@ -1,20 +1,37 @@
-package Esercizio3;
+package Esercizio3.vaccine;
 
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Person {
-    String nome;
-    String cognome;
     List<GreenPass> greenPassList = new ArrayList<>();
+    private String nome;
+    private String cognome;
 
     public Person(String nome, String cognome) {
         this.nome = nome;
         this.cognome = cognome;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
+
+    public String getFullName(){
+        return getNome() + " " + getCognome();
+    }
     public GreenPass vaccinate(){
         int durata;
         if(greenPassList.size()== 0){
@@ -23,8 +40,8 @@ public class Person {
             durata = 270;
         }
         System.out.println("\n-------------");
-        System.out.println("Vaccinazione n." + (greenPassList.size()+1) + " di " + nome + " " + cognome);
-        GreenPass gp = new GreenPass (durata);
+        System.out.println("Vaccinazione n." + (greenPassList.size()+1) + " di " + getFullName());
+        GreenPass gp = new GreenPass (durata){};
         greenPassList.add(gp);
         return gp;
     }
