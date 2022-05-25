@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Person {
-    List<GreenPass> greenPassList = new ArrayList<>();
+    private List<GreenPass> greenPassList = new ArrayList<>();
     private String nome;
     private String cognome;
 
