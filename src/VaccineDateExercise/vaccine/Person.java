@@ -1,4 +1,4 @@
-package Esercizio3.vaccine;
+package VaccineDateExercise.vaccine;
 
 import java.util.ArrayList;
 import java.util.List;

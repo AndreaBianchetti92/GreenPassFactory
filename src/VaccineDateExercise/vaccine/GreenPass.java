@@ -1,7 +1,7 @@
-package Esercizio3.vaccine;
+package VaccineDateExercise.vaccine;
 
 
-import Esercizio3.Utilities.DataFormatter;
+import VaccineDateExercise.Utilities.DataFormatter;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;

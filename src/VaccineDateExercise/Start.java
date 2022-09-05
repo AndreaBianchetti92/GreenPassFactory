@@ -1,7 +1,7 @@
-package Esercizio3;
+package VaccineDateExercise;
 
-import Esercizio3.vaccine.GreenPass;
-import Esercizio3.vaccine.Person;
+import VaccineDateExercise.vaccine.GreenPass;
+import VaccineDateExercise.vaccine.Person;
 
 public class Start {
     public static void main(String[] args) {
